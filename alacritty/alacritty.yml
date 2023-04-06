@@ -3,7 +3,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   title: Terminal
   dynamic_title: true
-  opacity: 0.85
+  opacity: 0.90
 scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000

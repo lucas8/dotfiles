@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
     use "folke/tokyonight.nvim"
     use 'norcalli/nvim-colorizer.lua'
 
-
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use 'ilyachur/cmake4vim'
 

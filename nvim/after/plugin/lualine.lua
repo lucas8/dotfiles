@@ -2,9 +2,7 @@ local lualine = require('lualine')
 
 lualine.setup({
     options = {
-        icons_enabled = false,
-        section_separators = '',
-        component_separators = '',
+        icons_enabled = true,
     },
     sections = {
         lualine_a = {'mode'},
