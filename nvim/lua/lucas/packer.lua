@@ -4,62 +4,48 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
     use "folke/tokyonight.nvim"
     use 'norcalli/nvim-colorizer.lua'
 
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use 'ilyachur/cmake4vim'
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
     use 'tpope/vim-commentary'
-    use {"akinsho/toggleterm.nvim", tag = '*' }
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use { "akinsho/toggleterm.nvim", tag = '*' }
 
-    use 'github/copilot.vim'
-    use 'mhinz/vim-startify'
+    use {
+        'zbirenbaum/copilot.lua',
+    }
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    }
 
-    use('nvim-treesitter/playground')
+    use 'zivyangll/git-blame.vim'
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+
+    use 'folke/trouble.nvim'
+    use('nvim-lualine/lualine.nvim')
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-
-        {'neovim/nvim-lspconfig'},
-        {'jose-elias-alvarez/null-ls.nvim'},
-        {'MunifTanjim/prettier.nvim'},
-    }}
-
-    use({
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    })
-
-    use "windwp/nvim-autopairs"
+        "echasnovski/mini.pairs",
+    }
+    use {
+        "RRethy/vim-illuminate",
+    }
     use "mg979/vim-visual-multi"
-
     use('windwp/nvim-ts-autotag')
     use {
         'lewis6991/gitsigns.nvim',
@@ -71,6 +57,27 @@ return require('packer').startup(function(use)
     })
     use 'ThePrimeagen/harpoon'
 
+    use 'kyazdani42/nvim-web-devicons'
 
+
+    -- lsp stuff
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+    use 'L3MON4D3/luasnip'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/nvim-cmp'
+    use 'onsails/lspkind.nvim'
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+    -- use({
+    --     'ray-x/navigator.lua',
+    --     requires = {
+    --         { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+    --         { 'neovim/nvim-lspconfig' },
+    --     },
+    -- })
 end)
-

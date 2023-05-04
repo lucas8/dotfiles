@@ -1,0 +1,18 @@
+-- require 'navigator'.setup({
+--     mason = true,
+--     keymaps = {
+--         {
+--             key = '<Space>.',
+--             mode = 'n',
+--             func = require('navigator.codeAction').code_action,
+--             desc = 'code_action',
+--         }
+--     },
+--     lsp = {
+--         enable = false,
+--         code_action_prompt = { enable = false },
+--         code_lens_action = { enable = false },
+--         document_highlight = false,
+--         format_on_save = false
+--     },
+-- })

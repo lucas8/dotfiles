@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "help", "javascript", "typescript", "c", "lua", "vim", "help", "query" },
+  ensure_installed = { "help", "javascript", "typescript", "c", "lua", "vim", "help", "query", "markdown", "markdown_inline" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -12,6 +12,13 @@ require'nvim-treesitter.configs'.setup {
   autotag = {
       enable = true,
   },
+
+  indent = {
+      enable = true
+  },
+
+  context_commentstring = { enable = true, enable_autocmd = false },
+
 
   highlight = {
     enable = true,
