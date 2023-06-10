@@ -9,3 +9,5 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "gt", "<C-w><C-]>")
+vim.keymap.set("n", "<C-o>", "<C-^>")
+vim.keymap.set("v", "<leader>y", '"*y<CR>')
