@@ -20,4 +20,5 @@ null_ls.setup({
                 end,
             })
         end
-    end,})
+    end,
+})
